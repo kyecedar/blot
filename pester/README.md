@@ -1,6 +1,6 @@
-# pester
+# Tauri + React + Typescript
 
-Little desktop application to keep track of little things.
+This template should help get you started developing with Tauri, React and Typescript in Vite.
 
 ## Recommended IDE Setup
 
