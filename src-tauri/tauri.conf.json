@@ -14,7 +14,10 @@
       {
         "title": "pester",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "minWidth": 350,
+        "minHeight": 350,
+        "decorations": false
       }
     ],
     "security": {
