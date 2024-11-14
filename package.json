@@ -1,5 +1,5 @@
 {
-  "name": "pester",
+  "name": "hound",
   "private": true,
   "version": "0.1.0",
   "type": "module",
