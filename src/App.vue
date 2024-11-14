@@ -16,7 +16,7 @@ async function greet() {
   <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 
   <div id="titlebar">
-    <div data-tauri-drag-region id="titlebartitle">pester</div>
+    <div data-tauri-drag-region id="titlebartitle">hound.</div>
     <div data-tauri-drag-region id="titlebarspacer"></div>
     <div id="titlebarbuttons">
       <div id="windowminimize" class="windowbutton"></div>
