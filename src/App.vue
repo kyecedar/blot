@@ -1,27 +1,53 @@
+<!-- #region // SETUP -->
+
 <script setup lang="ts">
 import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/core";
+import {
+  create,
+  exists,
+  writeTextFile,
+  BaseDirectory,
+} from "@tauri-apps/plugin-fs";
 
 // const greetMsg = ref("");
 // const name = ref("");
 
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  // greetMsg.value = await invoke("greet", { name: name.value });
-}
-</script>
+// async function greet() {
+// // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
+// greetMsg.value = await invoke("greet", { name: name.value });
+// }
 
+import { getCurrentWindow } from "@tauri-apps/api/window";
+
+const appWindow = getCurrentWindow();
+
+const minimizeApp = () => {
+  appWindow.minimize();
+};
+
+const maximizeApp = () => {
+  appWindow.toggleMaximize();
+};
+
+const closeApp = () => {
+  appWindow.close();
+};
+</script>
+<!-- #endregion SETUP -->
+
+<!-- #region // WINDOW -->
 <template>
   <link rel="stylesheet" type="text/css" href="/css/reset.css" />
   <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 
   <div id="titlebar">
-    <div data-tauri-drag-region id="titlebartitle">hound.</div>
+    <div data-tauri-drag-region id="titlebartitle">scribble.</div>
     <div data-tauri-drag-region id="titlebarspacer"></div>
     <div id="titlebarbuttons">
-      <div id="windowminimize" class="windowbutton"></div>
-      <div id="windowmaximize" class="windowbutton"></div>
-      <div id="windowclose" class="windowbutton"></div>
+      <div id="windowminimize" class="windowbutton" @click="minimizeApp"></div>
+      <div id="windowmaximize" class="windowbutton" @click="maximizeApp"></div>
+      <div id="windowclose" class="windowbutton" @click="closeApp"></div>
     </div>
   </div>
 
@@ -72,6 +98,7 @@ async function greet() {
   filter: drop-shadow(0 0 2em #249b73);
 } */
 </style>
+
 <style>
 :root {
   font-family: Geist;
@@ -176,3 +203,4 @@ main {
   height: 100%;
 }
 </style>
+<!-- #endregion WINDOW -->
