@@ -1,5 +1,4 @@
-# pester
-
+# hound
 Little desktop application to keep track of little things.
 
 ## Recommended IDE Setup
