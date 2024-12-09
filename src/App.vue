@@ -38,16 +38,25 @@ const closeApp = () => {
 
 <!-- #region // WINDOW -->
 <template>
-  <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-  <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
-
   <div id="titlebar">
-    <div data-tauri-drag-region id="titlebartitle">scribble.</div>
+    <div data-tauri-drag-region id="titlebartitle">blot.</div>
     <div data-tauri-drag-region id="titlebarspacer"></div>
     <div id="titlebarbuttons">
-      <div id="windowminimize" class="windowbutton" @click="minimizeApp"></div>
-      <div id="windowmaximize" class="windowbutton" @click="maximizeApp"></div>
-      <div id="windowclose" class="windowbutton" @click="closeApp"></div>
+      <div
+        id="windowminimize"
+        class="windowbutton svg-icon"
+        @click="minimizeApp"
+      ></div>
+      <div
+        id="windowmaximize"
+        class="windowbutton svg-icon"
+        @click="maximizeApp"
+      ></div>
+      <div
+        id="windowclose"
+        class="windowbutton svg-icon"
+        @click="closeApp"
+      ></div>
     </div>
   </div>
 
@@ -60,8 +69,8 @@ const closeApp = () => {
       </div>
       <div id="resizer"><div id="resizerline"></div></div>
       <div id="workarea">
-        <div id="dayscrawl"></div>
-        <div id="scrawlspot"></div>
+        <ul id="daynotes"></ul>
+        <ul id="foreshore"></ul>
       </div>
     </div>
   </main>
@@ -99,108 +108,5 @@ const closeApp = () => {
 } */
 </style>
 
-<style>
-:root {
-  font-family: Geist;
-  font-size: 12px;
-  line-height: 12px;
-  font-weight: 400;
-  user-select: none;
-  color: #202020;
-
-  --padding: 9px;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-#app {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  width: 100vw;
-  height: 100vh;
-}
-
-#titlebar {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-
-  height: 32px;
-  width: 100%;
-}
-
-#titlebartitle {
-  margin: auto 10px;
-  font-weight: 900;
-}
-
-#titlebarspacer {
-  flex-grow: 1;
-}
-
-#titlebarbuttons {
-  display: flex;
-  flex-direction: row;
-  gap: 1px;
-}
-
-.windowbutton {
-  width: 44px;
-  height: 100%;
-  cursor: pointer;
-}
-
-.windowbutton:hover {
-  background: red;
-}
-
-main {
-  display: flex;
-  flex-grow: 1;
-  position: relative;
-
-  width: 100vw;
-}
-
-#content {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  position: relative;
-
-  height: calc(100% - var(--padding) * 2);
-  max-width: calc(100% - var(--padding) * 2);
-  margin: auto auto;
-}
-
-#sidebar {
-  width: 280px;
-  height: 100%;
-}
-
-#resizer {
-  position: relative;
-  padding: 0 var(--padding);
-  height: 100%;
-  cursor: col-resize;
-}
-
-#resizerline {
-  width: 2px;
-  height: 100%;
-  background-color: #e0e0e0;
-}
-
-#workarea {
-  flex-grow: 1;
-  height: 100%;
-}
-</style>
+<style></style>
 <!-- #endregion WINDOW -->
