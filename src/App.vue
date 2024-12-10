@@ -38,28 +38,6 @@ const closeApp = () => {
 
 <!-- #region // WINDOW -->
 <template>
-  <div id="titlebar">
-    <div data-tauri-drag-region id="titlebartitle">blot.</div>
-    <div data-tauri-drag-region id="titlebarspacer"></div>
-    <div id="titlebarbuttons">
-      <div
-        id="windowminimize"
-        class="windowbutton svg-icon"
-        @click="minimizeApp"
-      ></div>
-      <div
-        id="windowmaximize"
-        class="windowbutton svg-icon"
-        @click="maximizeApp"
-      ></div>
-      <div
-        id="windowclose"
-        class="windowbutton svg-icon"
-        @click="closeApp"
-      ></div>
-    </div>
-  </div>
-
   <main>
     <div id="content">
       <div id="sidebar">
@@ -69,6 +47,32 @@ const closeApp = () => {
       </div>
       <div id="resizer"><div id="resizerline"></div></div>
       <div id="workarea">
+        <div id="titlebar">
+          <div data-tauri-drag-region id="titlebardayscriptor">
+            <span data-tauri-drag-region id="titlebarrelativewhen">Today</span>
+            <span data-tauri-drag-region id="titlebarexactwhen"
+              >Wed Aug 14</span
+            >
+          </div>
+          <div data-tauri-drag-region id="titlebarspacer"></div>
+          <div id="titlebarbuttons">
+            <div
+              id="windowminimize"
+              class="windowbutton svg-icon"
+              @click="minimizeApp"
+            ></div>
+            <div
+              id="windowmaximize"
+              class="windowbutton svg-icon"
+              @click="maximizeApp"
+            ></div>
+            <div
+              id="windowclose"
+              class="windowbutton svg-icon"
+              @click="closeApp"
+            ></div>
+          </div>
+        </div>
         <ul id="daynotes"></ul>
         <ul id="foreshore"></ul>
       </div>
